@@ -1,0 +1,26 @@
+{
+  "name": "node-express-rate-limiting",
+  "version": "1.0.0",
+  "description": "Simple rate-limiting functionality applying to the express",
+  "author": "Fernando Pires",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "start:docker": "sudo docker compose -f docker-compose.dev.yml up --build",
+    "build": "tsc",
+    "start": "npm run dist/index.js",
+    "start:dev": "nodemon --verbose --delay 500ms --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
+  }
+}

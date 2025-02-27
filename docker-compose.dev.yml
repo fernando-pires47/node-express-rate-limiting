@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+    networks:
+      - custom_network
+
+  rate-limiting-service:
+    build:
+      dockerfile: Dockerfile.dev
+    container_name: rate-limiting-service
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    networks:
+      - custom_network
+
+networks:
+  custom_network:
+    driver: bridge
