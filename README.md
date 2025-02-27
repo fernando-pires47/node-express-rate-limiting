@@ -57,9 +57,9 @@ To run via docker in dev environment:
   http://localhost:3000/
 ```
 
-After overtaking the value defined in the `LIMIT_REQUESTS` configuration, you're going to receive **bad request(500)** response.
+After overtaking the value defined in the `LIMIT_REQUESTS` configuration, you're going to receive **Too Many Requests(429)** response.
 
-After the window defined in the `BLOCK_WINDOW` configuration, you're going to receive **success(200)** response.
+After the window defined in the `BLOCK_WINDOW` configuration, you're going to receive **Success(200)** response.
 
 ## License
 
